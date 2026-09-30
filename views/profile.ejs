@@ -1,0 +1,21 @@
+<%- include('partials/header') %>
+
+<h1>Profile of <%= user.username %></h1>
+
+<form method="post" action="/profile/<%= user.id %>" class="card">
+  <label>Full name <input name="full_name" value="<%= user.full_name || '' %>"></label>
+  <label>Email <input name="email" value="<%= user.email || '' %>"></label>
+  <label>Phone <input name="phone" value="<%= user.phone || '' %>"></label>
+  <label>Bio <textarea name="bio" rows="4"><%= user.bio || '' %></textarea></label>
+  <label>Role <input name="role" value="<%= user.role %>"></label>
+  <button type="submit">Save</button>
+</form>
+
+<section class="card">
+  <h2>Public bio</h2>
+  <div class="body"><%- user.bio || '' %></div>
+</section>
+
+<p class="muted">Raw record: <a href="/api/users/<%= user.id %>">/api/users/<%= user.id %></a></p>
+
+<%- include('partials/footer') %>

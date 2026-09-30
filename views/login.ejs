@@ -1,0 +1,21 @@
+<%- include('partials/header') %>
+
+<h1>Sign in</h1>
+
+<% if (error) { %>
+  <p class="error"><%- error %></p>
+<% } %>
+
+<form method="post" action="/login" class="card">
+  <label>Username
+    <input name="username" autocomplete="off" autofocus>
+  </label>
+  <label>Password
+    <input name="password" type="password" autocomplete="off">
+  </label>
+  <button type="submit">Log in</button>
+</form>
+
+<p class="hint">Test account: <code>alice</code> / <code>alice123</code></p>
+
+<%- include('partials/footer') %>

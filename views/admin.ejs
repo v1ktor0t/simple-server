@@ -1,0 +1,51 @@
+<%- include('partials/header') %>
+
+<h1>Administration</h1>
+
+<section class="card">
+  <h2>Users</h2>
+  <table class="grid">
+    <thead><tr><th>id</th><th>username</th><th>role</th><th>email</th></tr></thead>
+    <tbody>
+      <% users.forEach(function (u) { %>
+        <tr>
+          <td><%= u.id %></td>
+          <td><a href="/profile/<%= u.id %>"><%= u.username %></a></td>
+          <td><%= u.role %></td>
+          <td><%= u.email %></td>
+        </tr>
+      <% }) %>
+    </tbody>
+  </table>
+</section>
+
+<section class="card">
+  <h2>Network check</h2>
+  <form method="post" action="/admin/ping">
+    <label>Host <input name="host" value="127.0.0.1"></label>
+    <button type="submit">Ping</button>
+  </form>
+</section>
+
+<section class="card">
+  <h2>Report formula</h2>
+  <form method="post" action="/admin/report">
+    <label>Expression <input name="formula" value="1 + 1"></label>
+    <button type="submit">Compute</button>
+  </form>
+</section>
+
+<% if (output) { %>
+  <section class="card">
+    <h2>Output</h2>
+    <p class="muted"><code><%= command %></code></p>
+    <pre><%= output %></pre>
+  </section>
+<% } %>
+
+<section class="card">
+  <h2>Service configuration</h2>
+  <pre><%= JSON.stringify(secrets, null, 2) %></pre>
+</section>
+
+<%- include('partials/footer') %>

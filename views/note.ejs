@@ -1,0 +1,18 @@
+<%- include('partials/header') %>
+
+<article class="card">
+  <h1><%- note.title %></h1>
+  <p class="muted">
+    Note #<%= note.id %> &middot; owner: <%= owner ? owner.username : 'unknown' %>
+    &middot; <%= note.visibility %>
+  </p>
+  <div class="body"><%- note.body %></div>
+</article>
+
+<form method="post" action="/notes/<%= note.id %>/delete">
+  <button class="danger">Delete note</button>
+</form>
+
+<p><a href="/dashboard">Back to notes</a></p>
+
+<%- include('partials/footer') %>

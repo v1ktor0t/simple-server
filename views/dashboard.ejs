@@ -1,0 +1,30 @@
+<%- include('partials/header') %>
+
+<h1>Hello <%= currentUser.full_name || currentUser.username %></h1>
+
+<section class="card">
+  <h2>My notes</h2>
+  <p><a class="button" href="/notes/new">New note</a></p>
+  <ul class="list">
+    <% notes.forEach(function (n) { %>
+      <li>
+        <a href="/notes/<%= n.id %>">#<%= n.id %> &mdash; <%- n.title %></a>
+        <span class="tag"><%= n.visibility %></span>
+      </li>
+    <% }) %>
+    <% if (notes.length === 0) { %><li class="muted">No notes yet.</li><% } %>
+  </ul>
+</section>
+
+<section class="card">
+  <h2>Inbox</h2>
+  <ul class="list">
+    <% messages.forEach(function (m) { %>
+      <li><strong><%= m.sender %></strong>: <%- m.subject %>
+        <span class="muted">(id <%= m.id %>)</span></li>
+    <% }) %>
+    <% if (messages.length === 0) { %><li class="muted">No messages.</li><% } %>
+  </ul>
+</section>
+
+<%- include('partials/footer') %>

@@ -1,0 +1,17 @@
+<%- include('partials/header') %>
+
+<h1>New note</h1>
+
+<form method="post" action="/notes" class="card">
+  <label>Title <input name="title" required></label>
+  <label>Body <textarea name="body" rows="8"></textarea></label>
+  <label>Visibility
+    <select name="visibility">
+      <option value="private">private</option>
+      <option value="public">public</option>
+    </select>
+  </label>
+  <button type="submit">Save</button>
+</form>
+
+<%- include('partials/footer') %>
