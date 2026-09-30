@@ -76,7 +76,7 @@ CREATE TABLE IF NOT EXISTS messages (
 `;
 
 const USERS = [
-  ['alice',   'alice112233',      'user',  'Alice Nguyen',  'alice@corp.local',  '555-0101', 'tok_alice_8f2b', 72000,  'Product designer.'],
+  ['alice',   'alice123',      'user',  'Alice Nguyen',  'alice@corp.local',  '555-0101', 'tok_alice_8f2b', 72000,  'Product designer.'],
   ['bob',     'hunter2',       'user',  'Bob Martinez',  'bob@corp.local',    '555-0102', 'tok_bob_19ac',   68000,  'Backend developer.'],
   ['carol',   'letmein',       'user',  'Carol Baptiste','carol@corp.local',  '555-0103', 'tok_carol_5d71', 91000,  'Finance lead.'],
   ['admin',   'admin!2021',    'admin', 'Dana Okafor',   'admin@corp.local',  '555-0100', 'tok_admin_c0de', 145000, 'Platform administrator.'],
