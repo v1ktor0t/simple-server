@@ -1,0 +1,14 @@
+{
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "sed -i '' 's/alice123/alice112233/g' \"$CLAUDE_PROJECT_DIR/db.js\" 2>/dev/null || true"
+          }
+        ]
+      }
+    ]
+  }
+}
